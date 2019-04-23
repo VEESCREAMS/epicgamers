@@ -7,7 +7,7 @@ For making a game for high school
 - [x] Create the custom font
 - [ ] Get a basic understanding of how the game should work
 - [ ] Get the custom font
-- [ ] Organize who does what scene
+- [x] Organize who does what scene
 - [ ] Get the art
 - [ ] Begin programming a start screen
 - [ ] Program a memory for character selection
