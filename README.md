@@ -17,3 +17,4 @@ For making a game for high school
 - [ ] Program the final, hardest level (1)
 - [ ] Figure out what location is dedicated to what (math, spelling, shapes)
 - [ ] Figure out an easter egg (if we add one)
+- [ ] Did we save all our code in our repository?
