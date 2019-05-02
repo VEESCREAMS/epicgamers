@@ -85,78 +85,93 @@ function keyPressed() {
     
   };
   
-      var x = 205;
-      var y = 125;
+  var vic =  function () { 
+  background(21, 219, 107);
+  var x = 204;
+  var y = 211;
+
+  fill(196, 136, 15);
+  ellipse(204, 211, 349, 349);
+  stroke(255, 0, 0);
+  strokeWeight(6);
+  arc(x - 1, y + 44, x + 38, y - 25, 1, 183);
+
+  fill(0, 0, 0);
+  noStroke();
+  ellipse(x - 84, y - 78, 50, 50);
+
+  ellipse(x + 78, y - 78, 50, 50);
+
+};
+  
+      var x = 355;
+      var y = 550;
       var faceSize = 169;
+      var Face = faceSize /8;
+      var earSize=faceSize*1/2;
 
     var drawD = function() {
-      
       noStroke();
 
 
-      // ears
-      var earSize=faceSize*1/2;
-      fill(89, 52, 17);
-      ellipse(x-faceSize*2/5, y-faceSize*2/5,               earSize, earSize);
-      ellipse(x+faceSize*2/5, y-faceSize*2/5,     earSize, earSize);
+// ears
 
-      //body
-      stroke(0, 0, 0);
-      strokeWeight(3);
-      fill(163, 113, 5);
-      ellipse(x + 0, y + 148, faceSize + 10, faceSize + 10);
+stroke(255, 255, 255);
+fill(255, 9, 134);
+ellipse(x-faceSize*2/5, y-faceSize*2/5, earSize, earSize);
+ellipse(x+faceSize*2/5, y-faceSize*2/5, earSize, earSize);
+
+//body
+stroke(0, 0, 0);
+strokeWeight(3);
+fill(255, 9, 134);
+ellipse(x + 0, y + 148, faceSize + 10, faceSize + 10);
+// face
+fill(255, 9, 134);
+ellipse(x, y, faceSize, faceSize);
+
+
+
+//eyes 
+
+fill(0, 0, 0);
+ellipse(x - faceSize / 5, y - 33, Face, Face);
+ellipse(x + faceSize/5, y - 33, Face, Face);
+
+
+
+//nose
+fill(0, 0, 0);
+ellipse(x, y+faceSize/8, faceSize*4/15, faceSize/5);
+
+//feet
+push();
+stroke(255, 9, 134);
+fill(255, 255, 255);
+// rotate(-14);
+translate(0, 0);
+ellipse(x - 59, y + 213, earSize - 10, earSize + 20);
+pop();
+
+push();
+fill(255, 255, 255);
+stroke(255, 9, 134);
+rotate();
+translate(0, 0);
+ellipse(x + 59, y + 213, earSize - 10, earSize + 20);
+pop();
+
+stroke(255, 189, 233);
+var h = 108;
+line(x - 58, y + 113, x - 268, h + 403);
+line(x + 58, y + 113, x + 278, h + 403);
+
       
-      // face
-      fill(163, 113, 5);
-      ellipse(x, y, faceSize, faceSize);
-
-
-
-      //eyes 
-      var Face = faceSize /8;
-      fill(0, 0, 0);
-      ellipse(x - faceSize / 4, 90, Face, Face);
-      ellipse(240, 90, Face, Face);
-
-
-
-      //nose
-      fill(89, 52, 20);
-      ellipse(x, y+faceSize/8, faceSize*4/15, faceSize/5);
-      
-      var f1 = function() {
-    stroke(255, 0, 0);
-    rotate(-15);
-    translate(-103, 20);
-    ellipse(x - 59, y + 213, earSize - 10, earSize + 20);
 };
 
-f1();
 
-var f2 = function() {
-    stroke(255, 0, 0);
-    rotate(30);
-    translate(157, -149);
-    ellipse(x + 59, y + 213, earSize - 10, earSize + 20);
-};
 
-f2();
-
-//     pushMatrix();
-//       stroke(255, 0, 0);
-//       rotate(-15);
-//       translate(-103, 20);
-//       ellipse(x - 59, y + 213, earSize - 10, earSize + 20);
-//     popMatrix();
-      
-//     pushMatrix();
-//       stroke(255, 0, 0);
-//       rotate(30);
-//       translate(157, -149);
-//       ellipse(x + 59, y + 213, earSize - 10, earSize + 20);
-//     popMatrix();
-
-};
+  
     
   if (key === ' ') {
     scene = 2;
@@ -174,7 +189,7 @@ f2();
     }
   }
   
-  if (key === 'l' && scene === 2 || scene === 5) {
+  if (key === 'l' && scene === 2 || key === 'l' && scene === 5) {
     scene = 4;
     if (scene === 4) {
       Ins();
@@ -187,9 +202,17 @@ f2();
     scene = 5;
     if (scene === 5) {
       play();
+      
     }
   }
  
+   if (key === 'v' && scene === 5) {
+    scene = 6;
+    if (scene === 6) {
+      vic();
+      
+    }
+  }
   
 }
 
