@@ -1,3 +1,69 @@
+
+
+
+
+var p= function () {
+    scene = 6;
+
+    input = createInput();
+    input.position(20, 65);
+
+    button = createButton('submit');
+    button.position(input.x + input.width, 65);
+    button.mousePressed(greet);
+
+    greeting = createElement('h2', 'what is your name?');
+    greeting.position(20, 5);
+
+    textAlign(CENTER);
+    textSize(50);
+  
+
+};
+  
+function greet() {
+  const name = input.value();
+  greeting.html('hello ' + name + '!');
+  input.value('');
+
+  for (let i = 0; i < 200; i++) {
+    push();
+    fill(random(255), 255, 255);
+    translate(random(width), random(height));
+    rotate(random(2 * PI));
+    text(name, 0, 0);
+    pop();
+  }
+}  
+  
+
+
+
+function setup() {
+  var scene = 1;
+  createCanvas(1000, 1000);
+  var title = function() {
+    background(255, 133, 96);
+    fill(245, 252, 111);
+    textSize(50);
+    text("Epic Gamers", 150, 200);
+    var x = 200;
+    var y = 350;
+    rect(x, y, 200, 100);
+    fill(0, 0, 0);
+    textSize(20);
+    text("Press Space to Start", x + 10, y + 50);
+  };
+
+
+ 
+    
+  if (scene === 1) {
+    title();
+  } 
+  
+}  
+
 function setup() {
   var scene = 1;
   createCanvas(1000, 1000);
