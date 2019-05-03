@@ -1,4 +1,6 @@
 # epicgamers
+![epicc](https://github.com/VEESCREAMS/epicgamers/blob/master/epiclogo_gamer.png)
+We each do 8 levels. Work on final level together
 For making a game for high school
 
 **C H E C K L I S T**
