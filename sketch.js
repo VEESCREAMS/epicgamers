@@ -42,27 +42,6 @@ function greet() {
 function setup() {
   var scene = 1;
   createCanvas(1000, 1000);
-  var title = function() {
-    background(255, 133, 96);
-    fill(245, 252, 111);
-    textSize(50);
-    text("Epic Gamers", 150, 200);
-    var x = 200;
-    var y = 350;
-    rect(x, y, 200, 100);
-    fill(0, 0, 0);
-    textSize(20);
-    text("Press Space to Start", x + 10, y + 50);
-  };
-
-
- 
-    
-  if (scene === 1) {
-    title();
-  } 
-  
-}  
 
 function setup() {
   var scene = 1;
@@ -276,7 +255,7 @@ line(x + 58, y + 113, x + 278, h + 403);
     scene = 6;
     if (scene === 6) {
       vic();
-      
+      p();
     }
   }
   
