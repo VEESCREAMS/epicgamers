@@ -1,19 +1,41 @@
+var vic =  function () { 
+  background(21, 219, 107);
+  var x = 204;
+  var y = 211;
 
+  fill(196, 136, 15);
+  ellipse(204, 211, 349, 349);
+  stroke(255, 0, 0);
+  strokeWeight(6);
+  noFill();
+  arc(x , y + 50, x+40, y - 25, 0, 2.32 + QUARTER_PI, OPEN);
+  
+
+  //eyes
+  fill(0, 0, 0);
+  noStroke();
+  ellipse(x - 84, y - 78, 50, 50);
+
+  ellipse(x + 78, y - 78, 50, 50);
+
+};
 
 
 
 var p= function () {
     scene = 6;
-
+    var x = 200;
+    var y = 750;
     input = createInput();
-    input.position(20, 65);
-
+    input.position(x, y + 150);
+    
+    
     button = createButton('submit');
-    button.position(input.x + input.width, 65);
+    button.position(input.x + input.width, y + 150);
     button.mousePressed(greet);
 
-    greeting = createElement('h2', 'what is your name?');
-    greeting.position(20, 5);
+    greeting = createElement('h6', 'what is your name?');
+    greeting.position(x, y);
 
     textAlign(CENTER);
     textSize(50);
@@ -25,15 +47,24 @@ function greet() {
   const name = input.value();
   greeting.html('hello ' + name + '!');
   input.value('');
-
-  for (let i = 0; i < 200; i++) {
-    push();
-    fill(random(255), 255, 255);
-    translate(random(width), random(height));
-    rotate(random(2 * PI));
-    text(name, 0, 0);
-    pop();
+  
+  if (name === 'hadi') {
+    vic();
   }
+  
+  // fill(255, 0, 0);
+  // text(name, 200, 50);
+  
+
+
+//   for (let i = 0; i < 200; i++) {
+//     push();
+//     fill(random(255), 255, 255);
+//     translate(random(width), random(height));
+//     rotate(random(2 * PI));
+//     text(name, 0, 0);
+//     pop();
+//   }
 }  
   
 
@@ -41,11 +72,7 @@ function greet() {
 
 function setup() {
   var scene = 1;
-  createCanvas(1000, 1000);
-
-function setup() {
-  var scene = 1;
-  createCanvas(1000, 1000);
+  createCanvas(1000, 900);
   var title = function() {
     background(255, 133, 96);
     fill(245, 252, 111);
@@ -66,7 +93,9 @@ function setup() {
     title();
   } 
   
-}
+}  
+
+
 
 function keyPressed() {
    var info = function() {
@@ -130,24 +159,6 @@ function keyPressed() {
     
   };
   
-  var vic =  function () { 
-  background(21, 219, 107);
-  var x = 204;
-  var y = 211;
-
-  fill(196, 136, 15);
-  ellipse(204, 211, 349, 349);
-  stroke(255, 0, 0);
-  strokeWeight(6);
-  arc(x - 1, y + 44, x + 38, y - 25, 1, 183);
-
-  fill(0, 0, 0);
-  noStroke();
-  ellipse(x - 84, y - 78, 50, 50);
-
-  ellipse(x + 78, y - 78, 50, 50);
-
-};
   
       var x = 355;
       var y = 550;
@@ -254,8 +265,9 @@ line(x + 58, y + 113, x + 278, h + 403);
    if (key === 'v' && scene === 5) {
     scene = 6;
     if (scene === 6) {
-      vic();
+      
       p();
+      
     }
   }
   
