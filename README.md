@@ -20,3 +20,4 @@ For making a game for high school
 - [ ] Figure out what location is dedicated to what (math, spelling, shapes)
 - [ ] Figure out an easter egg (if we add one)
 - [ ] Did we save all our code in our repository?
+- [ ] Do we have a title?
