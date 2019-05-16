@@ -1,4 +1,5 @@
 var scene = 0;
+
 var one = function() {
     scene = 1;
     var g = 340;
@@ -9,6 +10,8 @@ var one = function() {
     text("11", 260, g);
     text("10", 390, g);
     text("9", 520, g);
+  
+  createButton("Haid", ["Bue"])
   
     
      
@@ -147,6 +150,21 @@ var eight = function() {
 //   greeting.position(200, 5);
 // };
 
+
+
+var pp = function() {
+  var o = 200;
+  var t = 450;
+  input = createInput();
+  input.position(o, t);
+  
+  ans = createElement('h3', 'Answer:');
+  ans.position(o + 60, t - 65);
+  button = createButton('submit');
+  button.position(input.x + input.width, t);
+  button.mousePressed(greet);
+};
+
 var vic =  function () { 
   background(21, 219, 107);
   var x = 204;
@@ -171,22 +189,12 @@ var vic =  function () {
   ellipse(x - 84, y - 78, 50, 50);
 
   ellipse(x + 78, y - 78, 50, 50);
-
-};
-
-
-var pp = function() {
-  var o = 200;
-  var t = 450;
-  input = createInput();
-  input.position(o, t);
+    
   
-  ans = createElement('h3', 'Answer:');
-  ans.position(o + 60, t - 65);
-  button = createButton('submit');
-  button.position(input.x + input.width, t);
-  button.mousePressed(greet);
+
 };
+
+
   
 function greet() {
   const name = input.value();
@@ -211,55 +219,61 @@ function greet() {
   }
 }
 
-
-function setup() {
-  createCanvas(600, 600);
-  one();
-  onee();
-  pp();
-}
-
-
 function keyPressed() {
-  
-  if (key === 'a') {
+  if (key === 'a' && scene === 1) {
     two();
     $("h2").text("12 + 23 = ?");
     // twoo();
     pp();
-  } else if (key === 'b') {
+  } else if (key === 'b' && scene === 2 ) {
     three();
      $("h2").text("5 + 9 = ?");
     // threee();
     pp();
-  } else if (key === 'c') {
+  } else if (key === 'c' && scene === 3) {
     four();
      $("h2").text("6 + 3 + 2 = ?");
     // fourr();
     pp();
-  } else if (key === 'd') {
+  } else if (key === 'd' && scene === 4) {
     five();
      $("h2").text("9 + 4 + 6 + 9 = ?");
     // fivee();
     pp();
-  } else if (key === 'e') {
+  } else if (key === 'e' && scene === 5) {
     six();
     $("h2").text("7 + 0 + 2 + 9 = ?");
     // sixx();
     pp();
-  } else if (key === 'e') {
+  } else if (key === 'f' && scene === 6) {
     seven();
      $("h2").text("108 + 205 = ?");
     // sevenn();
     pp();
-  } else if (key === 'f') {
+  } else if (key === 'g' && scene === 7) {
     eight();
      $("h2").text("134 + 74 = ?");
     // eightt();
     pp();
   } 
   
+  
+  
 }
+
+
+function setup() {
+  createCanvas(600, 600);
+  // button = createButton('click me');
+  // button.position(19, 19);
+  // button.mousePressed(changeBG);
+  one();
+  onee();
+  pp();
+}
+
+
+
 
 // function draw() {
 //   background(220);
