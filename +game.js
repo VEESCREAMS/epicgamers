@@ -11,7 +11,7 @@ var one = function() {
     text("10", 390, g);
     text("9", 520, g);
   
-  createButton("Haid", ["Bue"])
+  // createButton("Haid", ["Bue"])
   
     
      
@@ -20,6 +20,8 @@ var one = function() {
 var onee = function() {
   greeting = createElement('h2', '4 + 5 = ?');
   greeting.position(200, 5);
+  // greeting('h2', '4 + 5 = ?');
+
 };
 
 var two = function() {
@@ -165,7 +167,11 @@ var pp = function() {
   button.mousePressed(greet);
 };
 
+var change = 'false';
+
 var vic =  function () { 
+  change = 'True';
+  // $("body").background-color(color(21, 219, 107));
   background(21, 219, 107);
   var x = 204;
   var y = 211;
@@ -189,12 +195,63 @@ var vic =  function () {
   ellipse(x - 84, y - 78, 50, 50);
 
   ellipse(x + 78, y - 78, 50, 50);
+  
+
+
     
   
 
 };
 
+  function keyPressed() {
+  if (key === 'a' && scene === 1 && change === 'True') {
+    two();
+    $("h2").text("12 + 23 = ?");
+    // twoo();
+    pp();
+    change = 'false';
+  } else if (key === 'b' && scene === 2 && change === 'True') {
+    three();
+     $("h2").text("5 + 9 = ?");
+    // threee();
+    pp();
+    change = 'false';
 
+  } else if (key === 'c' && scene === 3 && change === 'True') {
+    four();
+     $("h2").text("6 + 3 + 2 = ?" );
+    // fourr();
+    pp();
+    change = 'false';
+  } else if (key === 'd' && scene === 4 && change === 'True') {
+    five();
+     $("h2").text("9 + 4 + 6 + 9 = ?");
+    // fivee();
+    pp();
+    change = 'false';
+  } else if (key === 'e' && scene === 5 && change === 'True') {
+    six();
+    $("h2").text("7 + 0 + 2 + 9 = ?");
+    // sixx();
+    pp();
+    change = 'false';
+  } else if (key === 'f' && scene === 6 && change === 'True') {
+    seven();
+     $("h2").text("108 + 205 = ?");
+    // sevenn();
+    pp();
+    change = 'false';
+  } else if (key === 'g' && scene === 7 && change === 'True') {
+    eight();
+     $("h2").text("134 + 74 = ?");
+    // eightt();
+    pp();
+    change = 'false';
+  } 
+  
+  
+  
+}
   
 function greet() {
   const name = input.value();
@@ -219,47 +276,6 @@ function greet() {
   }
 }
 
-function keyPressed() {
-  if (key === 'a' && scene === 1) {
-    two();
-    $("h2").text("12 + 23 = ?");
-    // twoo();
-    pp();
-  } else if (key === 'b' && scene === 2 ) {
-    three();
-     $("h2").text("5 + 9 = ?");
-    // threee();
-    pp();
-  } else if (key === 'c' && scene === 3) {
-    four();
-     $("h2").text("6 + 3 + 2 = ?");
-    // fourr();
-    pp();
-  } else if (key === 'd' && scene === 4) {
-    five();
-     $("h2").text("9 + 4 + 6 + 9 = ?");
-    // fivee();
-    pp();
-  } else if (key === 'e' && scene === 5) {
-    six();
-    $("h2").text("7 + 0 + 2 + 9 = ?");
-    // sixx();
-    pp();
-  } else if (key === 'f' && scene === 6) {
-    seven();
-     $("h2").text("108 + 205 = ?");
-    // sevenn();
-    pp();
-  } else if (key === 'g' && scene === 7) {
-    eight();
-     $("h2").text("134 + 74 = ?");
-    // eightt();
-    pp();
-  } 
-  
-  
-  
-}
 
 
 function setup() {
