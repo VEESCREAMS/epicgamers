@@ -1,6 +1,8 @@
 var scene = 0;
 
 var one = function() {
+  greeting = createElement('h2', '4 + 5 = ?');
+  greeting.position(200, 5);
     scene = 1;
     var g = 340;
     background(220, 20, 60);
@@ -17,14 +19,14 @@ var one = function() {
      
   };
 
-var onee = function() {
-  greeting = createElement('h2', '4 + 5 = ?');
-  greeting.position(200, 5);
-  // greeting('h2', '4 + 5 = ?');
+// var onee = function() {
+  
+//   // greeting('h2', '4 + 5 = ?');
 
-};
+// };
 
 var two = function() {
+    $("h2").text("12 + 23 = ?");
     scene = 2;
     var g = 340;
     background(220, 20, 60);
@@ -44,6 +46,7 @@ var two = function() {
 // };
 
 var three = function() {
+    $("h2").text("5 + 9 = ?");
     scene = 3;
     var g = 340;
     background(220, 20, 60);
@@ -63,6 +66,7 @@ var three = function() {
 // };
 
 var four = function() {
+   $("h2").text("6 + 3 + 2 = ?");
     scene = 4;
     var g = 340;
     background(220, 20, 60);
@@ -81,6 +85,7 @@ var four = function() {
 // };
 
 var five = function() {
+  $("h2").text("9 + 4 + 6 + 9 = ?");
     scene = 5;
     var g = 340;
     background(220, 20, 60);
@@ -99,6 +104,7 @@ var five = function() {
 // };
 
 var six = function() {
+  $("h2").text("7 + 0 + 2 + 9 = ?");
     scene = 6;
     var g = 340;
     background(220, 20, 60);
@@ -117,6 +123,7 @@ var six = function() {
 // };
 
 var seven = function() {
+  $("h2").text("108 + 205 = ?");
     scene = 7;
     var g = 340;
     background(220, 20, 60);
@@ -135,6 +142,7 @@ var seven = function() {
 // };
 
 var eight = function() {
+    $("h2").text("134 + 74 = ?");
     scene = 8;
     var g = 340;
     background(220, 20, 60);
@@ -155,6 +163,7 @@ var eight = function() {
 
 
 var pp = function() {
+  var scenes = [one, two, three, four, five, six, seven, eight];
   var o = 200;
   var t = 450;
   input = createInput();
@@ -170,9 +179,12 @@ var pp = function() {
 var change = 'false';
 
 var vic =  function () { 
+  
+  var scenes = [one, two, three, four, five, six, seven, eight];
   change = 'True';
-  // $("body").background-color(color(21, 219, 107));
+  $("html").css("background-color", "rgb(21, 219, 107)");
   background(21, 219, 107);
+  
   var x = 204;
   var y = 211;
   
@@ -196,6 +208,39 @@ var vic =  function () {
 
   ellipse(x + 78, y - 78, 50, 50);
   
+  var btn1 = new Button({
+    x: 50,
+    y: 500,
+    label: "Please click!",
+    onClick: function() {
+        text("You made the right choice!", this.x, this.y+this.height);
+      scenes.shift();
+      scenes[0]();
+      $("html").css("background-color", "rgb(220, 20, 60");
+    }
+});
+
+
+
+// var btn2 = new Button({
+//     x: 500,
+//     y: 403,
+//     label: "No! Click ME!",
+//     onClick: function() {
+//         text("Yay, you picked me!", this.x, this.y+this.height);
+//     }
+// });
+
+
+
+
+
+btn1.draw();
+// btn2.draw();
+mouseClicked = function() {
+    btn1.handleMouseClick();
+    // btn2.handleMouseClick();
+};
 
 
     
@@ -203,55 +248,55 @@ var vic =  function () {
 
 };
 
-  function keyPressed() {
-  if (key === 'a' && scene === 1 && change === 'True') {
-    two();
-    $("h2").text("12 + 23 = ?");
-    // twoo();
-    pp();
-    change = 'false';
-  } else if (key === 'b' && scene === 2 && change === 'True') {
-    three();
-     $("h2").text("5 + 9 = ?");
-    // threee();
-    pp();
-    change = 'false';
+//   function keyPressed() {
+//   if (key === 'a' && scene === 1 && change === 'True') {
+//     two();
+//     $("h2").text("12 + 23 = ?");
+//     // twoo();
+//     pp();
+//     change = 'false';
+//   } else if (key === 'b' && scene === 2 && change === 'True') {
+//     three();
+//      $("h2").text("5 + 9 = ?");
+//     // threee();
+//     pp();
+//     change = 'false';
 
-  } else if (key === 'c' && scene === 3 && change === 'True') {
-    four();
-     $("h2").text("6 + 3 + 2 = ?" );
-    // fourr();
-    pp();
-    change = 'false';
-  } else if (key === 'd' && scene === 4 && change === 'True') {
-    five();
-     $("h2").text("9 + 4 + 6 + 9 = ?");
-    // fivee();
-    pp();
-    change = 'false';
-  } else if (key === 'e' && scene === 5 && change === 'True') {
-    six();
-    $("h2").text("7 + 0 + 2 + 9 = ?");
-    // sixx();
-    pp();
-    change = 'false';
-  } else if (key === 'f' && scene === 6 && change === 'True') {
-    seven();
-     $("h2").text("108 + 205 = ?");
-    // sevenn();
-    pp();
-    change = 'false';
-  } else if (key === 'g' && scene === 7 && change === 'True') {
-    eight();
-     $("h2").text("134 + 74 = ?");
-    // eightt();
-    pp();
-    change = 'false';
-  } 
+//   } else if (key === 'c' && scene === 3 && change === 'True') {
+//     four();
+//      $("h2").text("6 + 3 + 2 = ?" );
+//     // fourr();
+//     pp();
+//     change = 'false';
+//   } else if (key === 'd' && scene === 4 && change === 'True') {
+//     five();
+//      $("h2").text("9 + 4 + 6 + 9 = ?");
+//     // fivee();
+//     pp();
+//     change = 'false';
+//   } else if (key === 'e' && scene === 5 && change === 'True') {
+//     six();
+//     $("h2").text("7 + 0 + 2 + 9 = ?");
+//     // sixx();
+//     pp();
+//     change = 'false';
+//   } else if (key === 'f' && scene === 6 && change === 'True') {
+//     seven();
+//      $("h2").text("108 + 205 = ?");
+//     // sevenn();
+//     pp();
+//     change = 'false';
+//   } else if (key === 'g' && scene === 7 && change === 'True') {
+//     eight();
+//      $("h2").text("134 + 74 = ?");
+//     // eightt();
+//     pp();
+//     change = 'false';
+//   } 
   
   
   
-}
+// }
   
 function greet() {
   const name = input.value();
@@ -279,15 +324,19 @@ function greet() {
 
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(700, 600);
   // button = createButton('click me');
   // button.position(19, 19);
   // button.mousePressed(changeBG);
   one();
-  onee();
+  
   pp();
-}
 
+
+
+
+
+}
 
 
 
