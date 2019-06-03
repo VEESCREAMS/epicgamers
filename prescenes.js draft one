@@ -1,0 +1,150 @@
+function setup() {
+  
+  var a = 30;
+  var b = 250;
+  var c = 100;
+  
+  createCanvas(700, 900);
+  
+  var p = [
+    {
+        color: color(255, 133, 96),
+        label: "Hello",
+    },
+    {   color: color(228,20, 138),
+        label: "Menu", 
+    },
+    {   color: color(0, 0, 0),
+        label: "About Us",  
+    },
+    {   color: color(255, 0, 100),
+        label: "Instructions", 
+    },
+    {   color: color(117, 26, 230),
+        label: "Play", 
+    }
+];
+  
+  var btn1 = new Button({
+    x: 200,
+    y: 450,
+    label: "Start!",
+    width: 200,
+    onClick: function() {
+      // p.shift();
+      background(p[1].color);
+      fill(255, 255, 255);
+      textSize(a);
+      text(p[1].label, b, c);
+      btn2.x = 180;
+      btn3.x = 180;
+      btn4.x = 180;
+      btn2.draw();
+      btn3.draw();
+      btn4.draw();
+      
+      
+      $("body").css("background-color", "rgb(220, 20, 60");
+      scene = 2;
+      delete btn1.x;
+    }
+});
+  
+ var btn2 = new Button({
+    x: 180,
+    y: 180,
+    label: "About Us",
+    width: 250,
+    onClick: function() {
+      // p.shift();
+      background(p[2].color);
+      
+      // background(35, 0, 9);
+      $("html").css("background-color", "rgb(35, 0, 9");
+      // delete btn2.x;
+      delete btn3.x;
+      delete btn4.x;
+      fill(255, 255, 255);
+      textSize(a);
+      text(p[2].label, b, c);
+        var a = 125;
+    var b = 200;
+      textSize(15);
+      text("Hadi:" + " Just a kind and werid grade 10 student at AY Jackson.", a, b);
+    text("Bryn:" + " An odd kid from the school A.y Jackson Highschool.", a, b + 100);
+    text("V:" + " ", a, b + 200);
+      btn1.label= "Menu";
+      btn1.x = 200;
+      btn1.y = 470;
+      btn1.draw();
+      
+    }
+});
+  
+var btn3 = new Button({
+    x: 180,
+    y: 280,
+    label: "Instructions",
+    width: 250,
+    onClick: function() {
+      // p.shift();
+      background(p[3].color);
+      fill(255, 255, 255);
+      textSize(a);
+      text(p[3].label, b, c);
+      // background(35, 0, 9);
+      $("html").css("background-color", "rgb(35, 0, 9");
+      delete btn2.x;
+      // delete btn3.x;
+      delete btn4.x;
+       btn1.label= "Menu";
+      btn1.x = 200;
+      btn1.y = 470;
+      btn1.draw();
+    }
+});
+  
+var btn4 = new Button({
+    x: 180,
+    y: 380,
+    label: "Play",
+    width: 250,
+    onClick: function() {
+      // background(35, 0, 9);
+      
+      background(p[4].color);
+      fill(255, 255, 255);
+      textSize(a);
+      text(p[4].label, b, c);
+      $("html").css("background-color", "rgb(35, 0, 9");
+      delete btn2.x;
+      delete btn3.x;
+      
+       btn1.label= "Menu";
+      btn1.x = 180;
+      btn1.y = 420;
+      btn1.draw();
+  
+      // btn1.x = 200;
+      // btn1.y = 470;
+      // btn1.draw();
+    }
+});
+  
+
+   
+mouseClicked = function() {
+    btn1.handleMouseClick();
+    btn2.handleMouseClick();
+    btn3.handleMouseClick();
+    btn4.handleMouseClick();
+    
+};
+
+  background(p[0].color);
+  textSize(a);
+  fill(255, 255, 255);
+  text(p[0].label, b, c);
+  btn1.draw();
+   
+}
