@@ -1,0 +1,164 @@
+function setup() {
+  
+  
+  createCanvas(1000, 900);
+  
+  var sone =  
+    new s({
+    color: color(255, 133, 96),
+    label: "Hello",
+   
+})
+  
+  var stwo =  
+    new s({
+    color: color(228,20, 138),
+    label: "Menu", 
+    
+})
+  
+  
+  var sthree =  
+    new s({
+    color: color(0, 0, 0),
+    label: "About Us", 
+    
+})
+  
+  
+  var sfour =  
+    new s({
+    color: color(255, 0, 100),
+    label: "Instructions", 
+    
+})
+  
+   var sfive =  
+    new s({
+    color: color(117, 26, 230),
+    label: "Play", 
+    
+})
+  
+  var btn1 = new Button({
+    x: 200,
+    y: 450,
+    label: "Start!",
+    width: 200,
+    onClick: function() {
+      // p.shift();
+      stwo.draw();
+      btn2.x = 180;
+      btn3.x = 180;
+      btn4.x = 180;
+      
+      btn2.draw();
+      btn3.draw();
+      btn4.draw();
+      
+      
+      $("body").css("background-color", "rgb(220, 20, 60");
+      scene = 2;
+      delete btn1.x;
+    }
+});
+  
+ var btn2 = new Button({
+    x: 180,
+    y: 180,
+    label: "About Us",
+    width: 250,
+    onClick: function() {
+      // p.shift();
+      sthree.draw();
+      var a = 125;
+    var b = 200;
+      textSize(15);
+      text("Hadi:" + " Just a kind and werid grade 10 student at AY Jackson.", a, b);
+    text("Bryn:" + " An odd kid from the school A.y Jackson Highschool.", a, b + 100);
+    text("V:" + " ", a, b + 200);
+      // background(35, 0, 9);
+      $("html").css("background-color", "rgb(35, 0, 9");
+      // delete btn2.x;
+      delete btn3.x;
+      delete btn4.x;
+      
+      btn1.label= "Menu";
+      btn1.x = 200;
+      btn1.y = 470;
+      btn1.draw();
+      
+      // btn2[label]= "Menu";
+
+    }
+});
+  
+var btn3 = new Button({
+    x: 180,
+    y: 280,
+    label: "Instructions",
+    width: 250,
+    onClick: function() {
+      // p.shift();
+      sfour.draw();
+      // background(35, 0, 9);
+      $("html").css("background-color", "rgb(35, 0, 9");
+      delete btn2.x;
+      // delete btn3.x;
+      delete btn4.x;
+      btn1.x = 200;
+      btn1.y = 470;
+      btn1.draw();
+    }
+});
+  
+var btn4 = new Button({
+    x: 180,
+    y: 380,
+    label: "Play",
+    width: 250,
+    onClick: function() {
+      // background(35, 0, 9);
+      
+      sfive.draw();
+      $("html").css("background-color", "rgb(35, 0, 9");
+      delete btn2.x;
+      delete btn3.x;
+      
+      btn1.x = 180;
+      btn1.y = 420;
+      btn1.draw();
+  
+      // btn1.x = 200;
+      // btn1.y = 470;
+      // btn1.draw();
+    }
+});
+
+  
+ 
+   
+
+//     if () {
+//       btn1.draw();
+      
+//     }
+  
+//   if (scene === 2) {
+//     btn2.draw();
+//   }
+
+sone.draw();
+btn1.draw();
+mouseClicked = function() {
+    btn1.handleMouseClick();
+    btn2.handleMouseClick();
+    btn3.handleMouseClick();
+    btn4.handleMouseClick();
+    
+};
+
+  
+    
+}  
+
