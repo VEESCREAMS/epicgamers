@@ -1,7 +1,0 @@
-Spelling - B
-Patterns - R
-Sums/Math - H
-
-Title, About us, Instructions, Play - H
-End Screen - R
-Character Select, Level Select - B
