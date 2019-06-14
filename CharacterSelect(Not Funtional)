@@ -1,0 +1,54 @@
+//sketch
+function setup() {
+  createCanvas(400, 400);
+}
+function draw() {
+  background(0,0,0);
+  fill(255,255,255);
+  text("Choose Your Character", 50,50);
+  var Players = ["Player 1", "Player 2", "Player 3"];
+
+  var btn1 = {
+    x: 100,
+    y: 100,
+    width: 150,
+    height: 50
+};
+
+var btn2 = {
+    x: 100,
+    y: 200,
+    width: 150,
+    height: 50
+};
+
+var btn3 = {
+  x: 100,
+  y: 300,
+  width: 150,
+  height: 50
+};
+
+var drawButton = function(btn) {
+    fill(0, 234, 255);
+    rect(btn.x, btn.y, btn.width, btn.height, 5);
+    fill(0, 0, 0);
+    textSize(19);
+    textAlign(LEFT, TOP);
+};
+
+
+var isMouseInside = function(btn) {
+    return (mouseX >= btn.x &&
+            mouseX <= (btn.x+btn.width) &&
+            mouseY >= btn.y && 
+            mouseY <= (btn.y+btn.height));
+};
+
+drawButton(btn1);
+drawButton(btn2);
+drawButton(btn3);
+  text(Players[0],135,115);
+  text(Players[1],135,215);
+  text(Players[2],135,315);
+}
