@@ -1,0 +1,79 @@
+//sketch file
+let time;
+var counter = 10;
+var seconds
+let imput, textbutton;
+var sceneNum = 0;
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function keyPressed() {
+  if (key == 'q') {
+    sceneNum++;
+    time = new timer(10, 10, 10, 10);
+  }
+
+}
+
+function draw() {
+  if (sceneNum === 0) {
+    background(255, 255, 255);
+    textSize(20);
+    text("How do you spell Chocolate?", 75, 100);
+
+  } else if (sceneNum === 1) {
+    background(255, 255, 255);
+    time.update();
+    time.show();
+    input = createInput();
+    input.position(90, 65);
+    textbutton = createButton('submit');
+    textbutton.position(input.x + input.width, 65);
+    textbutton.mousePressed();
+  }
+}
+
+mouseClicked = function() {
+
+
+
+  var isMouseInside = function(btn) {
+    return (mouseX >= btn.x &&
+      mouseX <= (btn.x + btn.width) &&
+      mouseY >= btn.y &&
+      mouseY <= (btn.y + btn.height));
+  };
+
+
+
+
+
+}
+//Timer file
+var timer = function(time, end, textSize, textAlign) {
+  this.counter = 1000;
+  this.end = "Game Over!";
+  this.textSize = 10;
+  this.textAlign = 200;
+}
+
+timer.prototype.update = function() {
+  //this.time = round(millis() / 1000);
+  //if (this.time > 10) {
+  if (this.counter > 0) {
+    this.counter--;
+  }
+  seconds = this.counter / 1000;
+  if (this.counter > 10) {
+    text(this.end, 125, 300);
+    this.counter = 10;
+  }
+}
+
+
+timer.prototype.show = function() {
+  textSize(25);
+  text( this.counter, 200, 200);
+}
