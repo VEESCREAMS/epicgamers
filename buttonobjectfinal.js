@@ -1,5 +1,8 @@
+//defining variable that connects each scene with the draw function
 var sceneee = 0;
+//defining the variable that activate the timer
 var currentscene = 0;
+
 //deining button object
 var Button = function(config) {
   this.x = config.x || 0;
@@ -21,7 +24,7 @@ Button.prototype.draw = function() {
 
 };
 
-//prototype mouse check for button
+//prototype mouse check for button to see if the mouse is actually inside the button
 Button.prototype.isMouseInside = function() {
   return mouseX > this.x &&
     mouseX < (this.x + this.width) &&
@@ -35,7 +38,3 @@ Button.prototype.handleMouseClick = function() {
     this.onClick();
   }
 };
-
-
-
-
