@@ -33,6 +33,11 @@ function setup() {
   delete btn5.x;
   delete btn6.x;
 
+  //craeting name of our company and game
+  joke = createElement('h1', 'Epic Gamers!!!');
+  joke.position(30, 165);
   bug = new Jitter();
-  
+
+
+
 }
