@@ -13,15 +13,15 @@ s.prototype.draw = function() {
   //changing the html background color for the addition levels
   $("body").css("background-color", "rgb(204, 102, 0");
   $("html").css("background-color", "rgb(204, 102, 0");
-  
+
   //changing the question
   greeting = createElement('h2', this.greeting);
-  greeting.position(230, 410);
+  greeting.position(950, 80);
   scene = this.scene;
-  
+
   //the javascript background for the addition levls
   background(y);
-  
+
   //creating the options for the addition levels
   fill(255, 0, 0)
   textSize(26);
@@ -31,7 +31,7 @@ s.prototype.draw = function() {
   text(this.two, j * 2, g);
   text(this.three, j * 3, g);
   text(this.four, j * 4, g);
-  
+
   //calling the input button and submit button in the addition levels
   pp();
 
