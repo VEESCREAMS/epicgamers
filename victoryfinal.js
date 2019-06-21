@@ -14,25 +14,29 @@ var vic = function() {
   $("h2").text("");
   $("h3").text("");
 
+
+
+  //applying color to the face
+  fill(sx, sy, sz);
+
+  //variables that help set positions for face and its part
+  var x = 340;
+  var y = 260;
+
   //drawing actual face
-  fill(196, 136, 15);
-  ellipse(204, 211, 349, 349);
+  ellipse(x, y, 349, 349);
 
   //drawing mouth
   stroke(255, 0, 0);
   strokeWeight(6);
   noFill();
-
-  var x = 204;
-  var y = 211;
-
-  arc(x, y + 50, x + 40, y - 25, 0, 2.32 + QUARTER_PI, OPEN);
+  arc(x, y + 40, 244, 186, 0, 2.32 + QUARTER_PI, OPEN);
 
   //eyes
   fill(0, 0, 0);
   noStroke();
-  ellipse(x - 84, y - 78, 50, 50);
-  ellipse(x + 78, y - 78, 50, 50);
+  ellipse(x - 84, y - 73, 50, 50);
+  ellipse(x + 78, y - 73, 50, 50);
 
   //redefining button 1
   btn1.x = 50;
