@@ -1,8 +1,11 @@
+//definin variable that allows me to switch addition levels
 var i = 0;
 
 
 //array of objects for the properties for sone
-var p = [{
+var p = [
+  //first addition level
+  {
     greeting: "5 + 4 = ?",
     scene: 10,
     one: 12,
@@ -10,6 +13,7 @@ var p = [{
     three: 10,
     four: 9,
   },
+  //second addition level
   {
     greeting: "12 + 23 = ?",
     scene: 11,
@@ -18,6 +22,7 @@ var p = [{
     three: 35,
     four: 34,
   },
+  //third addition level
   {
     greeting: "5 + 9 = ?",
     scene: 12,
@@ -26,6 +31,7 @@ var p = [{
     three: 15,
     four: 14,
   },
+  //fourth addition level
   {
     greeting: "6 + 3 + 2 = ?",
     scene: 13,
@@ -34,6 +40,7 @@ var p = [{
     three: 10,
     four: 9,
   },
+  //fifth addition level
   {
     greeting: "9 + 4 + 6 + 9 = ?",
     scene: 14,
@@ -42,6 +49,7 @@ var p = [{
     three: 28,
     four: 19,
   },
+  //sixth addition level
   {
     greeting: "7 + 0 + 2 + 9 = ?",
     scene: 15,
@@ -50,6 +58,7 @@ var p = [{
     three: 21,
     four: 18,
   },
+  //seventh addition level
   {
     greeting: "108 + 205 = ?",
     scene: 16,
@@ -58,6 +67,7 @@ var p = [{
     three: 308,
     four: 312,
   },
+  //eighth addition level
   {
     greeting: "134 + 74 = ?",
     scene: 17,
@@ -66,6 +76,7 @@ var p = [{
     three: 208,
     four: 214,
   },
+  //scene that allows the gamers to switch to the pattern levels
   {
     greeting: "Congrats! You have Finished this section!",
     scene: 18,
