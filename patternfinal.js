@@ -7,14 +7,14 @@ var aa = 0;
 //variable for animation in end scene
 var xx = 1;
 
-//variable for Ending Text
+//variable for Ending Text "x" value
 var iii = 0;
 //first question
 var scene = 0;
 
 class Jitter {
   constructor() {
-    //location for x and y for all circles
+    //location for x and y for all circles. For each pair, the first value is for "x", the second value is for "y"
     this.x = 255;
     this.y = 215;
 
@@ -42,14 +42,16 @@ class Jitter {
     this.had = 60;
     this.haf = 60;
 
+    //defining texts for the options
+    this.o = "a";
+    this.t = "b";
+
     //defining variable for speed of movements of buttons
     this.speed = 1;
 
     //defining scene
     this.scene = 1;
-    //defining texts for the options
-    this.o = "a";
-    this.t = "b";
+
 
   }
 
@@ -59,9 +61,10 @@ class Jitter {
   }
 
   update() {
+    //defining scene once more to update it
     var scene = this.scene;
 
-
+    //checking answer for first question
     if (this.scene === 1 && key === 'b') {
       this.scene = 2;
       this.d = 60
@@ -81,7 +84,9 @@ class Jitter {
 
       this.had = 60;
       this.haf = 60;
-    } else if (scene === 2 && key === 'a') {
+    }
+    //checking answer for second question
+    else if (scene === 2 && key === 'a') {
       this.scene = 3;
       this.d = 60
       this.h = 60;
@@ -103,7 +108,9 @@ class Jitter {
 
       this.o = "b";
       this.t = "c";
-    } else if (this.scene === 3 && key === 'c') {
+    }
+    //checking answer for third question
+    else if (this.scene === 3 && key === 'c') {
       this.scene = 4;
       this.d = 60
       this.h = 60;
@@ -125,7 +132,9 @@ class Jitter {
 
       this.o = "d";
       this.t = "e";
-    } else if (this.scene === 4 && key === 'e') {
+    }
+    //checking answer for fourth question
+    else if (this.scene === 4 && key === 'e') {
       this.scene = 5;
       this.d = 70
       this.h = 70;
@@ -147,7 +156,9 @@ class Jitter {
 
       this.o = "y";
       this.t = "z";
-    } else if (this.scene === 5 && key === 'y') {
+    }
+    //checking answer for fifth question
+    else if (this.scene === 5 && key === 'y') {
       this.scene = 6;
       this.d = 90
       this.h = 60;
@@ -168,22 +179,36 @@ class Jitter {
       this.haf = 90;
       this.o = "f";
       this.t = "g";
-    } else if (key === 'f' && this.scene === 6) {
+    }
+    //checking answer for sixth question
+    else if (key === 'f' && this.scene === 6) {
+      //variable that stops clock
       currentscene = 2;
+
+      //changes background of the canvas
       background(0, 179, 179);
+
+      //background color change of the html and the body
       $("body").css("background-color", "rgb(0, 179, 179");
       $("html").css("background-color", "rgb(0, 179, 179");
-      if (currentscene === 2 && cc < 60) {
+
+      //condition if the time is less than 120 seconds (2 minutes)
+      if (currentscene === 2 && cc < 120) {
         image(c, aa, height / 4, c.width / 6, c.height / 6);
         image(c, aa + 300, height / 4, c.width / 6, c.height / 6);
         image(c, aa + 600, height / 4, c.width / 6, c.height / 6);
-      } else if (currentscene === 2 && cc < 120 && cc > 60 && currentscene === 2) {
+      }
+      //condition if the time is less than 180 seconds (3 minutes) but more than 120 seconds
+      else if (currentscene === 2 && cc < 180 && cc > 120 && currentscene === 2) {
         image(c, aa, height / 4, c.width / 6, c.height / 6);
         image(c, aa + 600, height / 4, c.width / 6, c.height / 6);
-      } else if (currentscene === 2 && cc >= 120) {
+      }
+      //condition if the final time is more than 180 seconds
+      else if (currentscene === 2 && cc >= 180) {
         image(c, aa + 300, height / 4, c.width / 6, c.height / 6);
       }
 
+      //array of colors used for the ending text
       var colors = [color(168, 9, 9), color(171, 101, 101), color(54, 90, 156), color(198, 201, 24), color(166, 11, 209), color(116, 16, 166), color(19, 189, 175), color(168, 9, 9), color(171, 101, 101), color(54, 90, 156)];
       //Final Time
       textSize(50);
@@ -218,29 +243,39 @@ class Jitter {
 
   display() {
     var scene = this.scene;
+    //activates timer 
     currentscene = 1;
 
     background(m);
 
+    //creating line to show missing shape
     stroke(0, 0, 0);
     strokeWeight(5);
     line(this.x + 320, this.y + 25, this.x + 420, this.y + 25);
 
     noStroke();
 
+    //showing texts to show which keys can be pressed in each level
     fill(61, 61, 41);
     textSize(20);
     text(this.o, this.x + 50, this.y + 260);
 
     text(this.t, this.x + 200, this.y + 260);
 
-    fill(255, 51, 0);
 
+    //drawing circles
+    fill(207, 54, 21);
+
+    //drawing first circle
     ellipse(this.x - 50, this.y, this.d, this.h);
+    //drawing second circle
     ellipse(this.x + 50, this.y, this.i, this.e);
+    //drawing third circle
     ellipse(this.x + 150, this.y, this.a, this.ii);
     ellipse(this.x + 250, this.y, this.m, this.g);
+    //drawing fourth circle
     ellipse(this.x + 50, this.y + 200, this.ott, this.ot);
+    //drawing fifth circle
     ellipse(this.x + 200, this.y + 200, this.had, this.haf);
 
   }
